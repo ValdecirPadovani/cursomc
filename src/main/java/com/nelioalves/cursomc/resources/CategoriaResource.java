@@ -10,6 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.nelioalves.cursomc.domain.Categoria;
 import com.nelioalves.cursomc.services.CategoriaService;
 
+/**
+ * 
+ * @author valdecir.junior
+ *
+ *Funciona como o controlador de acesso,
+ *tem todas as configurações de requisição de acesso
+ */
+
 @RestController
 @RequestMapping(value="/categorias")
 public class CategoriaResource {
