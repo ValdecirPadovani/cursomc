@@ -13,7 +13,6 @@ public class MockEmailService extends AbstractEmailService{
 		LOG.info("Simulando serviço de email.....");
 		LOG.info(msg.toString());
 		LOG.info("E-mail enviado");
-		
 	}
 
 }
