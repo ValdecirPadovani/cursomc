@@ -52,6 +52,14 @@ public class CategoriaService {
 		return repo.findAll();
 	}
 	
+	/**
+	 * 
+	 * @param page
+	 * @param linesPerPage
+	 * @param direction
+	 * @param orderBy
+	 * @return Retorna categorias limitando por paginas, para não ficar muito 
+	 */
 	public Page<Categoria> findPage(Integer page, Integer linesPerPage, String direction, String orderBy){
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 		return repo.findAll(pageRequest);
