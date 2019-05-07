@@ -1,6 +1,5 @@
 package com.nelioalves.cursomc.security;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -17,17 +16,15 @@ public class JWTUtil {
 	private String secret;
 	
 	@Value("${jwt.expiration} ")
-	private String expiration;
+	private Long expiration;
 	
 	
 	
 	public String generateToken(String username) {
-		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.SECOND, Integer.parseInt(expiration.trim()));
 		
 		return Jwts.builder()
 				.setSubject(username)
-				.setExpiration(calendar.getTime())
+				.setExpiration(new Date(System.currentTimeMillis() + expiration))
 				.signWith(SignatureAlgorithm.HS512, secret.getBytes())
 				.compact();
 	}
