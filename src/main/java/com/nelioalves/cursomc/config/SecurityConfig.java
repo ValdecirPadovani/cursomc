@@ -57,7 +57,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	 * Mesmo não logado clientes podem se cadastrar, por isso esse novo metodo
 	 */
 	private static final String[] PUBLIC_MATCHES_POST = {
-		    "/clientes/**",
+		    "/clientes",
+		    "/clientes/picture",
 		    "/auth/forgot/**"
 		};
 	
