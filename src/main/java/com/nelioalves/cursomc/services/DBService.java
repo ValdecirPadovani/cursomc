@@ -212,6 +212,7 @@ public class DBService {
 		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
 		
 		Cliente cli = new Cliente(null, "Maria Silva", "marina.silva@gmail.com", "36378912377", TipoCliente.PESSOAJURIDICA, pe.encode("12345").toString());
+		cli.addPerfil(Perfil.ADMIN);
 		cli.getTelefones().addAll(Arrays.asList("27363323", "93838393"));
 		
 		Cliente cli2 = new Cliente(null, "Ana Costa", "ana.costa@gmail.com", "36378912377", TipoCliente.PESSOAFISICA, pe.encode("12345").toString());
@@ -221,7 +222,7 @@ public class DBService {
 		
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim", "38220834", cli , c1); 
 		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli , c2);
-		Endereco e3 = new Endereco(null, "Rua Matos", "135", "Sala 700", "CENTRÃO", "38777012", cli , c2);
+		Endereco e3 = new Endereco(null, "Rua Matos", "135", "Sala 700", "CENTRÃO", "38777012", cli2 , c2);
 		
 		cli.getEnderecos().addAll(Arrays.asList(e1,e2));
 		cli.getEnderecos().addAll(Arrays.asList(e3));
